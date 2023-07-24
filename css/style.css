@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Lugrasimo&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+}
+body{
+    background: rgb(215, 215, 209);
+}
+
+/* HEADER NAVBAR */
+.logo{
+    height: 100px;
+    padding: 0;
+    border: solid 1px white;
+    margin-left: 50px
+}
+
+.navbar{
+    background-color: black;
+    box-shadow: 0 1px 3px black;
+}
+
+#navbarNav{
+    justify-content: end;
+    font-size: 30px;
+}
+
+.nav-item{
+    margin-right: 50px;
+}
+
+.nav-link{
+    color: rgb(250, 247, 152)
+}
+
+.titulo{
+    color: aqua;
+    font-size: 60;
+    text-shadow: 2px 2px 4px rgb(250, 247, 152);
+}
+
+.nav-container{
+    justify-content: space-between;
+}
+
+.logo-titulo{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.nav-link:hover{
+    color: rgba(255, 0, 0, 0.663);
+    text-shadow: 1px 1px 1px white;
+}
+
+.nav-link:focus{
+    color: rgb(250, 247, 152);
+}
+
+/* main - searchbar*/
+
+.section-search{
+    padding: 50px;
+    text-align: end;
+}
+
+.search-input{
+    width: 25%;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.search-input::placeholder{
+    color: black;
+    text-align: end;
+}
+h2{
+    text-align: center;
+    font-size: 45px;
+}
+/* main - cards */
+
+.section-cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap ;
+    align-items: end;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 0px 7px black;
+    width: 250;
+    margin: 40;
+}
+/* cards:hover{
+    scale: 2
+} MEJORAR PARA ENTREGA FINAL*/
+
+.product-name{
+    background-color: rgb(31, 110, 171);
+    padding: 10px 0px;
+    color: white;
+    box-shadow: 0px 1.5px 3px black;
+}
+
+.product-img{
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.product-img img{
+    width: 200px;
+}
+
+.product-size{
+    background-color: black;
+    color: rgb(250, 247, 152)
+}
+
+.product-price{
+    background-color:  rgb(31, 110, 171);
+    color: white;
+}
+
+.card-button{
+    width: 100%;
+    background-color: black;
+    color: rgb(250, 247, 152);
+    border: none;
+}
+.card-button:hover{
+    color: white;
+}
+
+/* checkout- shoppingCart - card */
+
+.delete-button{
+    background-color: rgb(244, 56, 56);
+    width: 100%;
+    border: none;
+}
+.delete-button:hover{
+    color: white
+}
+
+.epty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.epty-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.093);
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.322);
+    padding: 50px;
+    margin: 100px;
+    color: rgb(250, 247, 152);
+    font-size: 25px;
+}
+.click-below{
+    color: black;
+}
+.epty-link{
+    text-decoration: none;
+    color: rgb(31, 110, 171);
+    text-shadow: 1px 1px 1px white;
+}
+.epty-link:hover{
+    color: aqua;
+    text-shadow: 1px 1px 1px black;
+}
+/* buy-section */
+
+.buy-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.093);
+    width: 25%;
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.322);
+    margin-bottom: 25px;
+}
+
+.total{
+    color: rgb(250, 247, 152);
+    padding: 10px;
+    font-size: 40px;
+}
+.total-numbers{
+    color: aqua;
+}
+
+.buy-button{
+    background-color: #40AD55;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 70px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.buy-button:hover{
+    color: aqua;
+    background-color: rgb(31, 110, 171);
+    transition: ease-in 0.6s;
+}
