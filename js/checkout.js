@@ -16,13 +16,16 @@ function shoppingCard(prod) {
 }
 
 function showShoppingCart() {
+    shoppingCards.innerHTML = ''
     if (shoppingCart.length > 0) {
         shoppingCart.forEach((prod) => {
             shoppingCards.innerHTML += shoppingCard(prod)
         })
         buy.innerHTML = buySection()
         deleteItem()
-    } 
+    } else{
+        shoppingCards.innerHTML = ShoppingCartEpty()
+    }
 }
 
 function buySection(){
@@ -35,14 +38,16 @@ function buySection(){
 }
 
 function ShoppingCartEpty(){
-    return `<div class="epty">
-                <div class="epty-container"
-                    <div> Your Shopping Cart is Epty</div>
-                    <a href="../index.html" class="epty-link">
-                    please come back to our store and select some of our products
-                    </a>
-                </div>
-            </div>`
+    return `
+        <div class="epty">
+            <div class="epty-container">
+                <div> Your Shopping Cart is Epty</div>
+                <div class="click-below">click below</div>
+                <a href="../index.html" class="epty-link">
+                please come back to our store and select some of our products
+                </a>
+            </div>
+        </div>`
 }
 
 function deleteItem() {
