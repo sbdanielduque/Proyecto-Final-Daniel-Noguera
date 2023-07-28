@@ -1,5 +1,6 @@
 const cards = document.querySelector('section.section-cards#section-card')
 const searchBar = document.querySelector('input#search-bar.search-input')
+const sizes = document.querySelector('select#size')
 
 
 function card(prod) {
@@ -9,7 +10,7 @@ function card(prod) {
                     <img src="${prod.img}" alt="${prod.model}">
                 </div>
                 <div class="info-box">
-                    <div class="product-size">${prod.size}</div>
+                    <div class="product-size">${selectSize()}</div>
                     <div class="product-price">$ ${prod.price}</div>
                     <button class="card-button" id="${prod.id}">Seleccionar</button>
                 </div>
@@ -23,6 +24,18 @@ function productAvalaible(array) {
     }
 }
 
+function selectSize(){
+    return `<label for="size">Size: 
+                <select name="sizeList" id="size">
+                    <option selected disabled>Select Size</option>
+                </select>
+            </label>`
+}
+function sizeOptions() {
+    if(sizes.length > 0) {
+        forEach((prod) => sizes.innerHTML += `<option>${prod.size}</option>`)
+    }
+}
 productAvalaible(shoesList)
 
 searchBar.addEventListener("search", () => {

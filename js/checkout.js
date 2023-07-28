@@ -57,8 +57,8 @@ function deleteItem() {
         dltbtn.addEventListener('click', ()=>{
             let findIndexLocalStorage = localStorageLength.findIndex(prod => prod.id === parseInt(dltbtn.id))
             shoppingCart.splice(findIndexLocalStorage, 1)
+            showShoppingCart()
             saveShoppingCart()
-            location.reload()
         })
     })
 }
