@@ -1,4 +1,4 @@
-shoesList = [{id: 0, model: 'Forum Bad Bunny Blue', brand:'Adidas', img: '../img/adidas-Forum-Buckle-Low-Bad-Bunny-Blue-Tint-Product-removebg-preview.png', size: [6, 7, 8, 8.5, 9, 9.5], price: 199},
+shoesList = [{id: 0, model: 'Forum Bad Bunny Blue', brand:'Adidas', img: '/img/adidas-Forum-Buckle-Low-Bad-Bunny-Blue-Tint-Product-removebg-preview.png', size: [6, 7, 8, 8.5, 9, 9.5], price: 199},
             {id: 1, model: 'Forum Bad Bunny Pink', brand:'Adidas', img: '../img/adidas-Forum-Low-Bad-Bunny-Pink-Product-removebg-preview.png', size: [4.5, 5, 7, 8, 10], price: 199},
             {id: 2, model: 'Air jordan 1 "Chicago Lost"', brand:'Nike', img: '../img/Air-Jordan-Background-PNG-Image.png', size:[8, 9, 9.5, 10, 12], price: 249},
             {id: 3, model: 'Jordan Retro 1 "Off White"', brand:'Nike', img: '../img/Air-Jordan-Download-Free-PNG.png', size:[10, 10.5, 11, 12], price: 999},
@@ -29,3 +29,4 @@ function getShoppingCart(){
 }
 
 const shoppingCart = getShoppingCart()
+

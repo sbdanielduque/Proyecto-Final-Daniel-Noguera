@@ -1,5 +1,8 @@
 const shoppingCards = document.querySelector('section.section-shopping-card')
-const buy = document.querySelector('section.buy-section')
+const buy = document.querySelector('div.total-section')
+const buybtn = document.querySelector('button#buyBtn')
+const eptyDiv = document.querySelector('div.epty-cart')
+const searchBar = document.querySelector('input#search-bar.search-input')
 
 function shoppingCard(prod) {
     return `<div class="cards">
@@ -24,19 +27,17 @@ function showShoppingCart() {
         buy.innerHTML = buySection()
         deleteItem()
     } else{
-        shoppingCards.innerHTML = ShoppingCartEpty()
+        eptyDiv.innerHTML = ShoppingCartEpty()
     }
 }
 
 function buySection(){
-    return `<div class='section-container'>
+    return `<div>
                 <div class='total'>Total: $  
                 <span class='total-numbers'>${shoppingCart.reduce((acc, prod) => acc + prod.price, 0).toFixed(2)}</span>
                 </div>
-                <button class="buy-button">BUY here</button>
-            </div>`
+            </div>`    
 }
-
 function ShoppingCartEpty(){
     return `
         <div class="epty">
@@ -59,9 +60,39 @@ function deleteItem() {
             shoppingCart.splice(findIndexLocalStorage, 1)
             showShoppingCart()
             saveShoppingCart()
+            Toastify({
+                text: "Deleted",
+                duration: 1000,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "black",
+                }
+            }).showToast();
         })
     })
 }
+
+buybtn.addEventListener('click', ()=>{
+    const total = document.querySelector('span.total-numbers')
+    let totalNum = parseInt(total.innerHTML)
+    Swal.fire({
+        title: `Your Total is $${totalNum.toFixed(2)}`,
+        showDenyButton: true,
+        confirmButtonText: 'Buy it',
+        denyButtonText: `Don't Buy it`,
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire('Thanks for you Purchase!', '', 'success')
+        } else if (result.isDenied) {
+            Swal.fire('Purchase canceled', '', 'error')
+        }
+    })
+})
+
 
 showShoppingCart(shoppingCart)
 

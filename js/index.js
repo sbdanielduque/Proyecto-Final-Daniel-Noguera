@@ -1,7 +1,6 @@
 const cards = document.querySelector('section.section-cards#section-card')
 const searchBar = document.querySelector('input#search-bar.search-input')
-const sizes = document.querySelector('select#size')
-
+const sizes = document.querySelector('label#sizess')
 
 function card(prod) {
     return `<div class="cards">
@@ -10,7 +9,7 @@ function card(prod) {
                     <img src="${prod.img}" alt="${prod.model}">
                 </div>
                 <div class="info-box">
-                    <div class="product-size">${selectSize()}</div>
+                    <div class="product-size">${sizes.innerHTML}<div>
                     <div class="product-price">$ ${prod.price}</div>
                     <button class="card-button" id="${prod.id}">Seleccionar</button>
                 </div>
@@ -24,20 +23,17 @@ function productAvalaible(array) {
     }
 }
 
-function selectSize(){
-    return `<label for="size">Size: 
-                <select name="sizeList" id="size">
-                    <option selected disabled>Select Size</option>
-                </select>
-            </label>`
-}
-function sizeOptions() {
-    if(sizes.length > 0) {
-        forEach((prod) => sizes.innerHTML += `<option>${prod.size}</option>`)
-    }
-}
-productAvalaible(shoesList)
 
+function sizeOptions() {
+    const sizeList = document.querySelectorAll('select#sizeList')
+        if (shoesList.length > 0) {
+            shoesList.forEach((propiedad) => {
+                sizeList.innerHTML += `<option>${propiedad.size}</option>`
+            })
+        }
+}
+sizeOptions()
+productAvalaible(shoesList)
 searchBar.addEventListener("search", () => {
     if (searchBar.value.trim() !== ''){
         let returnList = shoesList.filter((prod) => prod.model.toLowerCase().includes(searchBar.value.trim().toLowerCase()))
@@ -54,7 +50,17 @@ const cardButtons = document.querySelectorAll('button.card-button')
             let product = shoesList.find((prod)=> prod.id === parseInt(button.id))
             shoppingCart.push(product)
             saveShoppingCart()
+            Toastify({
+                text: "Is added to cart",
+                duration: 1000,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "black",
+                }
+            }).showToast();
         })
     })
 }
-
