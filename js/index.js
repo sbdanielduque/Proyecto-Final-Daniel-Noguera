@@ -52,7 +52,7 @@ const cardButtons = document.querySelectorAll('button.card-button')
             shoppingCart.push(product)
             saveShoppingCart()
             Toastify({
-                text: "Is added to cart",
+                text: "Added to cart",
                 duration: 1000,
                 close: true,
                 gravity: "bottom",
