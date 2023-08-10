@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Lugrasimo&family=Playfair+Display&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -100,9 +101,9 @@ h2{
     width: 250;
     margin: 40;
 }
-/* cards:hover{
-    scale: 2
-} MEJORAR PARA ENTREGA FINAL*/
+.cards:hover{
+    scale: 1.1
+}
 
 .product-name{
     background-color: rgb(31, 110, 171);
@@ -234,4 +235,67 @@ h2{
     color: rgba(0, 0, 0, 0.188);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+}
+
+div#swal2-html-container{
+    font-size: 30;
+    color: red
+}
+
+/* Size  */
+
+#sizeList{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: solid black;
+}
+
+.span-select{
+    color: red;
+}
+
+.h2-margin{
+    margin-top: 140px;
+}
+
+.footer-container{
+    background: linear-gradient(transparent, 5%, black);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-top: 100px;
+    color: white;
+}
+
+.email-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.email-input input{
+    font-family: 'Bangers', cursive;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Lugrasimo', cursive;
+    font-family: 'Playfair Display', serif;;
+    width: 300px;
+}
+
+.button-subs{
+    width: 70px;
+    margin-top: 20px;
+    background-color: rgb(250, 247, 152);
+}
+
+.button-subs:hover{
+    background-color: aqua;
+    transition: ease-in 0.2s;
+}
+
+.copy-container{
+    margin-top: 50;
+    color: rgb(183, 171, 171);
+    font-size: 12px;
 }
