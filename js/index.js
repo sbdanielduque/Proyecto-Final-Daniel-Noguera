@@ -19,7 +19,7 @@ function card(prod) {
                 </label>
                     <div>
                     <div class="product-price">$ ${prod.price}</div>
-                    <button class="card-button" id="${prod.id}">Seleccionar</button>
+                    <button class="card-button" id="${prod.id}">Select</button>
                 </div>
             </div>`
         }
